@@ -1,41 +1,45 @@
 const products = [
-  {
-    id: 'favor-agradecimento', name: 'Kit lembrancinhas de agradecimento',
-    category: 'lembrancas', categoryLabel: 'Lembranças', price: 1346, rating: '4,7', badge: 'Mais vendido',
-    image: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=85',
-    alt: 'Mesa de celebração preparada com detalhes delicados'
-  },
-  {
-    id: 'quebra-cabeca', name: 'Kit com 12 quebra-cabeças infantis',
-    category: 'infantil', categoryLabel: 'Infantil', price: 2916, rating: '4,2', badge: 'Aprender brincando',
-    image: 'assets/quebra-cabeca-infantil.svg',
-    alt: 'Ilustração de peças de quebra-cabeça infantil em madeira'
-  },
-  {
-    id: 'quadro-personalizado', name: 'Quadro decorativo personalizado',
-    category: 'decoracao', categoryLabel: 'Decoração', price: 1080, rating: '4,5', badge: 'Do seu jeito',
-    image: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=900&q=85',
-    alt: 'Obra decorativa emoldurada em uma parede clara'
-  },
-  {
-    id: 'quadro-aguia', name: 'Quadro decorativo águia em voo',
-    category: 'decoracao', categoryLabel: 'Decoração', price: 1080, rating: '4,7', badge: 'Arte para sua casa',
-    image: 'https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=900&q=85',
-    alt: 'Pintura expressiva em uma galeria de arte'
-  },
-  {
-    id: 'lembranca-casamento', name: 'Lembrancinhas personalizadas para casamento',
-    category: 'lembrancas', categoryLabel: 'Lembranças', price: 2539, rating: '5,0', badge: 'Feito para celebrar',
-    image: 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=900&q=85',
-    alt: 'Detalhes de uma recepção de casamento com flores brancas'
-  },
-  {
-    id: 'quadro-santa-ceia', name: 'Quadro dourado Santa Ceia',
-    category: 'decoracao', categoryLabel: 'Decoração', price: 16625, rating: '—', badge: 'Destaque da loja',
-    image: 'https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?auto=format&fit=crop&w=900&q=85',
-    alt: 'Pintura clássica emoldurada com acabamento dourado'
-  }
-];
+  { id: 'quadro-botanico', name: 'Quadro botânico folhas douradas', category: 'decoracao', categoryLabel: 'Decoração', price: 1080, badge: 'Arte decorativa', visual: 'folhas' },
+  { id: 'quadro-leao', name: 'Quadro leão e filhote', category: 'decoracao', categoryLabel: 'Decoração', price: 1290, badge: 'Arte decorativa', visual: 'leao' },
+  { id: 'quadro-aguia', name: 'Quadro decorativo águia em voo', category: 'decoracao', categoryLabel: 'Decoração', price: 1080, badge: 'Arte decorativa', visual: 'aguia' },
+  { id: 'quadro-familia', name: 'Placa decorativa nossa família', category: 'decoracao', categoryLabel: 'Decoração', price: 1346, badge: 'Para sua casa', visual: 'familia' },
+  { id: 'quadro-santa-ceia', name: 'Quadro Santa Ceia moldura dourada', category: 'decoracao', categoryLabel: 'Decoração', price: 16625, badge: 'Arte decorativa', visual: 'santaceia' },
+  { id: 'kit-coracoes', name: 'Kit corações de agradecimento em MDF', category: 'lembrancas', categoryLabel: 'Lembranças', price: 1346, badge: 'Lembrança em MDF', visual: 'coracoes' },
+  { id: 'lembranca-noivos', name: 'Lembrancinha de noivos em MDF', category: 'lembrancas', categoryLabel: 'Lembranças', price: 3200, badge: 'Para celebrar', visual: 'noivos' },
+  { id: 'enfeites-natal', name: 'Enfeites de Natal em MDF', category: 'lembrancas', categoryLabel: 'Lembranças', price: 2880, badge: 'Lembrança em MDF', visual: 'natal' },
+  { id: 'placa-gratidao', name: 'Mini placa de gratidão em MDF', category: 'lembrancas', categoryLabel: 'Lembranças', price: 2539, badge: 'Para presentear', visual: 'gratidao' },
+  { id: 'lembranca-borboleta', name: 'Lembrancinha borboleta vazada', category: 'lembrancas', categoryLabel: 'Lembranças', price: 1346, badge: 'Lembrança em MDF', visual: 'borboleta' },
+  { id: 'puzzle-animais', name: 'Kit 12 quebra-cabeças de animais', category: 'infantil', categoryLabel: 'Infantil', price: 2916, badge: 'Brincar e aprender', visual: 'animais' },
+  { id: 'puzzle-mini', name: 'Kit 20 mini quebra-cabeças', category: 'infantil', categoryLabel: 'Infantil', price: 3969, badge: 'Brincar e aprender', visual: 'mini' },
+  { id: 'puzzle-formas', name: 'Quebra-cabeça formas e cores', category: 'infantil', categoryLabel: 'Infantil', price: 2490, badge: 'Brincar e aprender', visual: 'formas' },
+  { id: 'puzzle-alfabeto', name: 'Quebra-cabeça alfabeto', category: 'infantil', categoryLabel: 'Infantil', price: 2590, badge: 'Brincar e aprender', visual: 'alfabeto' },
+  { id: 'puzzle-safari', name: 'Quebra-cabeça safari de madeira', category: 'infantil', categoryLabel: 'Infantil', price: 2916, badge: 'Brincar e aprender', visual: 'safari' }
+].map((product) => ({ ...product, alt: `${product.name}, ilustração demonstrativa` }));
+
+function renderIllustration(product) {
+  const art = {
+    folhas: '<path d="M205 265c0-75 42-117 91-130-1 58-27 100-91 130Zm3 5c14-57 61-88 112-89-16 53-48 82-112 89Zm-2-4c-13-43-4-79 22-109 18 41 14 74-22 109Z" fill="#75856a" stroke="#465544" stroke-width="3"/><path d="M206 271 281 150M211 264l88-79" fill="none" stroke="#d8ba78" stroke-width="3"/>',
+    leao: '<circle cx="250" cy="214" r="74" fill="#b2783f"/><circle cx="250" cy="218" r="52" fill="#e6c895"/><path d="m216 202 12 9m44-9-12 9m-20 22q10 8 20 0m-10-9v13" fill="none" stroke="#49372a" stroke-width="5" stroke-linecap="round"/><circle cx="188" cy="294" r="31" fill="#d0a46a"/><circle cx="188" cy="296" r="22" fill="#edcf9c"/><path d="m180 292 5 4m10-4-5 4m-3 5 5 3" fill="none" stroke="#49372a" stroke-width="3" stroke-linecap="round"/>',
+    aguia: '<path d="M118 239q55-13 99-68l33 30 35-27q35 48 97 60-53 9-97-22l-35 29-33-28q-45 34-99 26Z" fill="#665347" stroke="#3f362d" stroke-width="4"/><path d="m241 202 19-34 13 39-25 13Z" fill="#d0a455"/><circle cx="263" cy="198" r="3" fill="#f6eddb"/>',
+    familia: '<path d="M143 150h214v166H143z" fill="#f5f0e5"/><path d="M166 280q14-67 44-67t44 67m19 0q14-67 44-67t44 67" fill="#b28b57"/><circle cx="210" cy="197" r="24" fill="#b28b57"/><circle cx="298" cy="197" r="24" fill="#b28b57"/><path d="M208 266q19-38 39 0m23 0q19-38 39 0" fill="#d7ba7d"/><text x="250" y="302" text-anchor="middle" font-size="15" fill="#635640">NOSSA FAMÍLIA</text>',
+    santaceia: '<path d="M141 164h218v138H141z" fill="#bc9b60"/><path d="M151 174h198v118H151z" fill="#493b30"/><circle cx="250" cy="204" r="19" fill="#e2c88f"/><path d="M224 273q4-49 26-49t26 49m-100 0q4-37 21-37 14 0 18 37m67 0q4-37 21-37 14 0 18 37" fill="#d7c5a3"/><path d="M166 241h36m96 0h36" stroke="#d7c5a3" stroke-width="5"/>',
+    coracoes: '<path d="M196 188c-34-37-86 13 0 82l4 3 4-3c86-69 34-119 0-82l-4 5Z" fill="#d49b75" stroke="#8b604c" stroke-width="4"/><path d="M289 197c-26-28-66 10 0 63l3 3 4-3c66-53 26-91 0-63l-4 4Z" fill="#e4c9a2" stroke="#9a7952" stroke-width="4"/><text x="248" y="309" text-anchor="middle" font-size="18" fill="#765e47">OBRIGADO</text>',
+    noivos: '<circle cx="217" cy="197" r="24" fill="#c79b72"/><circle cx="278" cy="197" r="24" fill="#d5b993"/><path d="M184 286q3-63 33-63t33 63m-11 0q4-63 39-63t39 63" fill="#f0e9dd" stroke="#93734f" stroke-width="4"/><path d="m250 231 7 11 13 2-10 9 3 13-13-7-12 7 3-13-10-9 13-2Z" fill="#c99c50"/>',
+    natal: '<path d="m250 139 17 38 42 4-31 29 9 42-37-22-37 22 9-42-31-29 42-4Z" fill="#d7af61"/><path d="m250 202 67 76h-42l29 38h-108l29-38h-42Z" fill="#59715b" stroke="#40533f" stroke-width="4"/><path d="M246 306h9v19h-9" fill="#886143"/><circle cx="218" cy="265" r="5" fill="#f0dbac"/><circle cx="278" cy="278" r="5" fill="#f0dbac"/>',
+    gratidao: '<rect x="153" y="171" width="194" height="134" rx="7" fill="#e7d9ba" stroke="#a38a5d" stroke-width="5"/><path d="M180 197h140m-140 22h110" stroke="#a98c5b" stroke-width="3"/><path d="M241 271q9-15 18 0-9 11-18 0Zm10-2q-25-32-37-14m37 14q25-32 37-14" fill="#829073" stroke="#62715c" stroke-width="3"/><text x="250" y="253" text-anchor="middle" font-size="15" fill="#5d5342">GRATIDÃO</text>',
+    borboleta: '<path d="M247 228c-62-91-118-24-55 16-64 45-3 103 55 20 59 83 119 25 55-20 64-40 7-107-55-16Z" fill="#d4b178" stroke="#8d7047" stroke-width="4"/><path d="M250 224v63m0-55q-18-18-15-29m15 29q18-18 15-29" fill="none" stroke="#735e40" stroke-width="4" stroke-linecap="round"/><circle cx="208" cy="225" r="8" fill="#f4e8ca"/><circle cx="291" cy="225" r="8" fill="#f4e8ca"/>',
+    animais: '<path d="M170 252q0-57 52-57t52 57q0 34-52 34t-52-34Zm91-5q0-48 45-48t45 48q0 29-45 29t-45-29Z" fill="#d4ac70" stroke="#8b704a" stroke-width="4"/><circle cx="205" cy="247" r="4"/><circle cx="236" cy="247" r="4"/><circle cx="290" cy="241" r="4"/><circle cx="324" cy="241" r="4"/><path d="M199 265q7 7 14 0m87 0q7 7 14 0" fill="none" stroke="#5d5040" stroke-width="3"/>',
+    mini: '<g fill="#d8b77e" stroke="#99784c" stroke-width="3"><rect x="151" y="169" width="88" height="75" rx="8"/><rect x="261" y="169" width="88" height="75" rx="8"/><rect x="151" y="257" width="88" height="75" rx="8"/><rect x="261" y="257" width="88" height="75" rx="8"/></g><g fill="#78856c"><circle cx="195" cy="206" r="17"/><path d="M305 190 324 223h-38Z"/><path d="M172 295h46v7h-46zm10-15h26v10h-26z"/><circle cx="305" cy="294" r="18" fill="#c88665"/></g>',
+    formas: '<path d="M167 276v-67q0-11 11-11h49q11 0 11 11v67q0 11-11 11h-49q-11 0-11-11Zm112-78h57v89h-57z" fill="#d7b779" stroke="#927344" stroke-width="4"/><circle cx="200" cy="239" r="18" fill="#829276"/><path d="m308 214 25 44h-50Z" fill="#c27d62"/><path d="M180 306h141" stroke="#97794f" stroke-width="4" stroke-linecap="round"/>',
+    alfabeto: '<g fill="#e4d2ae" stroke="#98794e" stroke-width="3"><rect x="159" y="170" width="59" height="59" rx="7"/><rect x="220" y="170" width="59" height="59" rx="7"/><rect x="281" y="170" width="59" height="59" rx="7"/><rect x="190" y="232" width="59" height="59" rx="7"/><rect x="251" y="232" width="59" height="59" rx="7"/></g><g fill="#66755d" font-size="31" font-weight="bold" text-anchor="middle"><text x="188" y="210">A</text><text x="249" y="210">B</text><text x="310" y="210">C</text><text x="219" y="272">D</text><text x="280" y="272">E</text></g>',
+    safari: '<path d="M181 270q0-53 54-53t54 53q0 25-54 25t-54-25Zm85-15q0-44 42-44t42 44q0 24-42 24t-42-24Z" fill="#d4ac70" stroke="#8d704a" stroke-width="4"/><circle cx="216" cy="265" r="4"/><circle cx="246" cy="265" r="4"/><path d="M283 249v-37l20 13 19-13v37" fill="#e2c88f" stroke="#8d704a" stroke-width="4"/><circle cx="299" cy="247" r="3"/><circle cx="309" cy="247" r="3"/>'
+  }[product.visual];
+  const puzzle = product.category === 'infantil';
+  const bg = puzzle ? '#e8dec6' : product.category === 'lembrancas' ? '#eee5d4' : '#e7e0d1';
+  const surface = puzzle ? '#d4bc91' : '#d9d0bd';
+  const frame = puzzle ? '#aa8855' : product.category === 'lembrancas' ? '#b99a6d' : '#b49358';
+  return `<svg viewBox="0 0 500 500" role="img" aria-label="${product.alt}" xmlns="http://www.w3.org/2000/svg"><rect width="500" height="500" fill="${bg}"/><path d="M0 355Q250 315 500 355v145H0Z" fill="${surface}"/><circle cx="408" cy="92" r="49" fill="#f5eddd" opacity=".58"/>${puzzle ? `<rect x="115" y="117" width="270" height="245" rx="12" fill="#f0e5cc" stroke="${frame}" stroke-width="15"/><rect x="130" y="132" width="240" height="215" rx="7" fill="#f8f1e2"/>` : product.category === 'decoracao' ? `<rect x="112" y="99" width="276" height="277" fill="${frame}"/><rect x="128" y="115" width="244" height="245" fill="#f1eadc"/><rect x="143" y="130" width="214" height="215" fill="#e5ddcb"/>` : `<rect x="102" y="125" width="296" height="240" rx="20" fill="#f6efe1" opacity=".62"/>`}<g>${art}</g><path d="M65 393h370" stroke="#b6a88e" stroke-width="2" opacity=".65"/></svg>`;
+}
 
 const money = (cents) => new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(cents / 100);
 const grid = document.querySelector('#product-grid');
@@ -78,10 +82,10 @@ function renderProducts() {
   grid.innerHTML = visible.length ? visible.map((product, index) => `
     <article class="product-card" style="animation-delay:${index * 65}ms">
       <div class="product-photo">
-        <img src="${product.image}" alt="${product.alt}" loading="lazy" />
+        ${renderIllustration(product)}
         <span class="product-tag">${product.badge}</span>
       </div>
-      <div class="product-meta"><span>${product.categoryLabel}</span><span class="rating">★ ${product.rating}</span></div>
+      <div class="product-meta"><span>${product.categoryLabel}</span><span class="demo-label">Peça demonstrativa</span></div>
       <h3>${product.name}</h3>
       <div class="product-bottom"><span class="product-price">${money(product.price)} <small>valor demonstrativo</small></span><button class="add-to-cart" type="button" data-add="${product.id}">Adicionar à sacola <span aria-hidden="true">＋</span></button></div>
     </article>`).join('') : '<p class="empty-state">Não encontramos essa peça. Tente outra busca.</p>';
@@ -112,7 +116,7 @@ function renderCart() {
     <div class="cart-step-label"><span class="step-current">01</span><i></i><span>02</span><span>Minha sacola</span></div>
     <div class="cart-items">${rows.map((item) => `
       <article class="cart-item">
-        <img src="${item.image}" alt="" />
+        <div class="cart-item-thumb" aria-hidden="true">${renderIllustration(item)}</div>
         <div class="cart-item-info"><h3>${item.name}</h3><span>${money(item.price)}</span><div class="quantity-control" aria-label="Quantidade de ${item.name}"><button type="button" data-quantity="${item.id}" data-change="-1" aria-label="Diminuir quantidade">−</button><span>${item.quantity}</span><button type="button" data-quantity="${item.id}" data-change="1" aria-label="Aumentar quantidade">+</button></div></div>
         <button class="remove-item" type="button" data-remove="${item.id}" aria-label="Remover ${item.name}">×</button>
       </article>`).join('')}</div>
