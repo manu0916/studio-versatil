@@ -8,8 +8,8 @@ const products = [
   {
     id: 'quebra-cabeca', name: 'Kit com 12 quebra-cabeças infantis',
     category: 'infantil', categoryLabel: 'Infantil', price: 2916, rating: '4,2', badge: 'Aprender brincando',
-    image: 'https://images.unsplash.com/photo-1599629954294-14df9ec41f29?auto=format&fit=crop&w=900&q=85',
-    alt: 'Brinquedos infantis de madeira em cores suaves'
+    image: 'assets/quebra-cabeca-infantil.svg',
+    alt: 'Ilustração de peças de quebra-cabeça infantil em madeira'
   },
   {
     id: 'quadro-personalizado', name: 'Quadro decorativo personalizado',
