@@ -1,6 +1,6 @@
 # Studio Versátil
 
-Vitrine demonstrativa, front end estático e responsivo para a loja Studio Versátil. Os cartões apresentam uma amostra de produtos reais encontrados na loja pública da Shopee; as imagens dos cartões são ilustrativas e os valores/disponibilidade podem mudar. A compra acontece exclusivamente na Shopee.
+Vitrine demonstrativa, front end estático e responsivo para a loja Studio Versátil. Inclui catálogo, sacola, quantidades, soma do pedido e fluxo demonstrativo de checkout. A sacola pode ser mantida localmente no navegador. Como este projeto ainda não tem backend, nenhum pedido, endereço ou pagamento é transmitido ou processado. As fotos e valores são ilustrativos.
 
 ## Publicar no Cloudflare Pages
 
@@ -11,6 +11,3 @@ Vitrine demonstrativa, front end estático e responsivo para a loja Studio Vers�
 
 O projeto não precisa de dependências nem de etapa de build. `index.html`, `styles.css`, `script.js` e `assets/` formam o site.
 
-## Loja
-
-https://shopee.com.br/93giazbazt
