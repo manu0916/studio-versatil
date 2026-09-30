@@ -9,5 +9,5 @@ Vitrine demonstrativa, front end estático e responsivo para a loja Studio Vers�
 - Build output directory: `/` (raiz do repositório)
 - Root directory: `/`
 
-O projeto não precisa de dependências nem de etapa de build. `index.html`, `styles.css`, `script.js` e `assets/` formam o site.
+O projeto não precisa de dependências nem de etapa de build. `index.html`, `styles.css` e `script.js` formam o site.
 
